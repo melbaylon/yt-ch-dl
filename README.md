@@ -18,6 +18,14 @@ To get the most of this package, you should be comfortable with Linux, setting u
 # Dependencies
 This package uses youtube-dl and rclone to download videos and from the VPS to a remote storage, respectively.
 
+# The scripts
+## list.sh
+`list.sh` goes through a youtube channel and extracts video ids based on filters.
+
+You can also use it without filters.
+## dl.sh
+`dl.sh` downloads and then moves the downloaded video files to a remote storage
+
 ## youtube-dl
 To install `youtube-dl`, you should install these first:
 - python3
