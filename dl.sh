@@ -32,9 +32,12 @@ do
     # The following checks if webm, mkv or mp4 exists in the current directory.
     # If they are, the file is then copied to the remote storage path defined above.
     # After copying, the local file is deleted
-    ls | grep -i webm | while read video; do rclone copy $video $rs -P -v; rm $video; done
-    ls | grep -i mkv | while read video; do rclone copy $video $rs -P -v; rm $video; done
-    ls | grep -i mp4 | while read video; do rclone copy $video $rs -P -v; rm $video; done
+    # ls | grep -i webm | while read video; do rclone copy $video $rs -P -v; rm $video; done
+    # ls | grep -i mkv | while read video; do rclone copy $video $rs -P -v; rm $video; done
+    # ls | grep -i mp4 | while read video; do rclone copy $video $rs -P -v; rm $video; done
+
+    rclone copy downloads $rs -P -v;
+    rm downloads/*;
 
     # This while loop will run until all the video ids are processed
 done
