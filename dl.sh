@@ -4,10 +4,10 @@
 # Feel free to change this depending on the formats
 # and resolution you want to download.
 # This is optimized for downloading WEBM videos
-alias yd="youtube-dl -f '(webm[width <= 3840]) + (251/250/249/140/139)' -o '%(title)s - %(id)s - %(uploader)s - %(upload_date)s - %(resolution)s.%(ext)s' --all-subs --embed-subs --add-metadata -i --external-downloader aria2c"
+alias yd="youtube-dl -f '(webm[width <= 3840]) + (251/250/249/140/139)' -o 'downloads/%(channel)s/%(title)s - %(id)s - %(uploader)s - %(upload_date)s - %(resolution)s.%(ext)s' --all-subs --embed-subs --add-metadata -i --external-downloader aria2c"
 
 # This runs if the preferred formats, set by yd (above) is not available
-alias ydb="youtube-dl -o '%(title)s - %(id)s - %(uploader)s - %(upload_date)s - %(resolution)s.%(ext)s' --all-subs --embed-subs --add-metadata -i --external-downloader aria2c"
+alias ydb="youtube-dl -o 'downloads/%(title)s/%(channel)s - %(id)s - %(uploader)s - %(upload_date)s - %(resolution)s.%(ext)s' --all-subs --embed-subs --add-metadata -i --external-downloader aria2c"
 
 
 # PATH TO REMOTE STORAGE
