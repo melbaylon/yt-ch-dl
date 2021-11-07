@@ -17,4 +17,4 @@ filter='(Python)'
 # If any part of the video title
 # matches any of the filters,
 # its video is added/appended to the ids file.
-youtube-dl $channel --skip-download --match-title $filter --min-sleep-interval 5 --max-sleep-interval 10  --get-id -v -i | cat >> ids
+yt-dlp $channel --skip-download --match-title $filter --min-sleep-interval 5 --max-sleep-interval 10  --get-id -v -i | cat >> ids

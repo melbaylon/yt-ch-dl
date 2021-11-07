@@ -1,13 +1,13 @@
 #!usr/bin/zsh
 
-# YOUTUBE-DL COMMANDS
+# yt-dlp COMMANDS
 # Feel free to change this depending on the formats
 # and resolution you want to download.
 # This is optimized for downloading WEBM videos
-alias yd="youtube-dl -f '(webm[width <= 3840]) + (251/250/249/140/139)' -o 'downloads/%(channel)s/%(title)s - %(id)s - %(uploader)s - %(upload_date)s - %(resolution)s.%(ext)s' --all-subs --embed-subs --add-metadata -i --external-downloader aria2c"
+alias yd="yt-dlp -f '(webm[width <= 3840]) + (251/250/249/140/139)' -o 'downloads/%(channel)s/%(title)s - %(id)s - %(uploader)s - %(upload_date)s - %(resolution)s.%(ext)s' --all-subs --embed-subs --add-metadata -i --external-downloader aria2c"
 
 # This runs if the preferred formats, set by yd (above) is not available
-alias ydb="youtube-dl -o 'downloads/%(title)s/%(channel)s - %(id)s - %(uploader)s - %(upload_date)s - %(resolution)s.%(ext)s' --all-subs --embed-subs --add-metadata -i --external-downloader aria2c"
+alias ydb="yt-dlp -o 'downloads/%(title)s/%(channel)s - %(id)s - %(uploader)s - %(upload_date)s - %(resolution)s.%(ext)s' --all-subs --embed-subs --add-metadata -i --external-downloader aria2c"
 
 
 # PATH TO REMOTE STORAGE
@@ -22,7 +22,7 @@ rs="remote:downloaded-videos"
 echo "" >> ids | cat ids | while read id;
 do
     # If yd doesn't work, ydb will run
-    # Generally, youtube-dl can process videos ids.
+    # Generally, yt-dlp can process videos ids.
     # However, video ids that starts with a hyphen fails to download.
     # Passing in a complete video URL
     # using using https://youtu.be/$id
